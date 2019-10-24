@@ -48,19 +48,71 @@
             z-index: 999;
 
         }
+      
 
         .boton:hover {
             opacity: 0.50;
             -moz-opacity: .50;
             filter: alpha (opacity=50);
         }
-
+        
         .boton a {
             color: #fff;
             text-decoration: none;
             padding: 5px 5px 5px 0;
         }
 
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: white;
+        }
+
+        .overlay2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: white;
+        }
+
+        .overlay3 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: white;
+        }
+
+
+        .contain:hover .overlay {
+            opacity: 0.8;
+        }
+
+        .contain:hover .overlay2 {
+            opacity: 0.8;
+        }
+
+        .contain:hover .overlay3 {
+            opacity: 0.8;
+        }
 
 
 
@@ -71,6 +123,11 @@
         .card-title {
             text-align: center;
         }
+
+        .inputC {
+            background-color: white !important;
+        }
+
 
 
 
@@ -123,6 +180,7 @@
             transform: translate(-50%, -50%);
             color: #f1f1f1;
             font-size: 100%;
+            display:block;
             font-weight: 900;
         }
 
@@ -179,6 +237,9 @@
         @media screen and (max-width: 800px) {
             .focus {
                 display: none !important;
+            }
+            .mas{
+                display: none;
             }
 
             .centrado1 {
@@ -291,6 +352,20 @@
             </div>
         </div>
     </div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 col-sm-12 d-sm-block d-md-none  d-lg-none d-xl-none text-warning text-center">
+                    <div class=" ">
+                            <i class="fas fa-lightbulb fa-9x"></i>
+                        </div>
+                        <div style="font-size: 30px;
+                        font-weight: 900;">Powatt</div>
+        
+                        <div style="
+                        font-size: 25px;">La Energía nos Mueve</div>
+            </div>
+        </div>
+    </div>
     <!--nosotros-->
     <div class="section section-about-us" id="nosotros">
         <div class="container">
@@ -301,64 +376,87 @@
                         elit. Molestiae, non!
                         Alias deleniti atque, qui recusandae eaque labore aspernatur. Explicabo, architecto. Lorem ipsum
                         dolor sit amet consectetur adipisicing elit. Dolor, illum!</h5>
+                    <img src="/img/line.jpg" class="img-responsive img-fluid animated fadeIn" alt="">
                 </div>
             </div>
-            <div class="separator separator-primary"></div>
-            <div class="section-story-overview">
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- First image on the left side -->
-                        <div class="image-container image-left" style="background-image: url('/img/img2.jpg')">
-                            <p class="blockquote blockquote-primary animated slideInUp wow">"Lorem ipsum dolor sit, amet
-                                consectetur
-                                adipisicing elit. Autem nihil nesciunt sed perferendis necessitatibus libero labore rem,
-                                alias sunt sit! "
-                                <br>
-                                <br>
-                                <small>-NOAA</small>
-                            </p>
+
+        </div>
+    </div>
+    <!--Valores-->
+    <div class="section" id="valores">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+
+                    <h2 class="title">Valores</h2>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-xl-4 col-md-4 col-lg-4 text-center">
+                    <div class="info info-hover">
+                        <div class="icon icon-warning">
+                            <i class="fas fa-balance-scale"></i>
                         </div>
-                        <!-- Second image on the left side of the article -->
-
-                        <div class="img2">
-                            <div class="image-container image-left-bottom"
-                                style="background-image: url('/img/img3.jpg')">
-                            </div>
-                        </div>
-
-
-
+                        <h4 class="info-title">Valor 1</h4>
+                        <p class="description">Gain access to the demographics, psychographics, and location of unique
+                            people.</p>
                     </div>
-                    <div class="col-md-5" style="margin-top: 100px!important;">
-                        <!-- First image on the right side, above the article -->
-                        <div class="image-container image-right hey" style="background-image: url('/img/img4.jpg')">
+                </div>
+                <div class="col-12 col-sm-12 col-xl-4 col-md-4 col-lg-4 text-center">
+                    <div class="info info-hover">
+                        <div class="icon icon-warning">
+                            <i class="fas fa-comments"></i>
                         </div>
-                        <h3 class="animated slideInUp wow">Misión</h3>
-                        <p class="animated slideInUp wow">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Soluta odit eius quaerat
-                            repudiandae ratione adipisci obcaecati incidunt, libero provident, praesentium, consequuntur
-                            ex similique est quo ducimus. Nam expedita quisquam dolorum.
-                        </p>
-                        <h3 class="animated slideInUp wow">Visión</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quibusdam perferendis beatae
-                            nemo aut maxime! Ab assumenda perspiciatis culpa natus quia animi sint omnis quaerat, neque
-                            et tempora, reiciendis provident maxime saepe sit ex quos.
-                        </p>
-                        <div class="img1">
-                            <div class="image-container image-left-bottom "
-                                style="background-image: url('/img/img3.jpg')">
-                            </div>
+                        <h4 class="info-title">Valor 2</h4>
+                        <p class="description">Gain access to the demographics, psychographics, and location of unique
+                            people.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-xl-4 col-md-4 col-lg-4 text-center">
+                    <div class="info info-hover">
+                        <div class="icon icon-warning">
+                            <i class="fab fa-ello"></i>
                         </div>
-                        <h3 class="animated slideInUp wow">Valores</h3>
-                        <p class="animated slideInUp wow">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Explicabo exercitationem, obcaecati
-                            dolores odio aut harum voluptate! Sed et laborum architecto expedita totam corporis earum,
-                            magni vitae non rem, autem quam! Harum quas magnam numquam placeat.
-                        </p>
+                        <h4 class="info-title">Valor 3</h4>
+                        <p class="description">Gain access to the demographics, psychographics, and location of unique
+                            people.</p>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-xl-4 col-md-4 col-lg-4 text-center">
+                    <div class="info info-hover">
+                        <div class="icon icon-warning">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h4 class="info-title">Valor 4</h4>
+                        <p class="description">Gain access to the demographics, psychographics, and location of unique
+                            people.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-xl-4 col-md-4 col-lg-4 text-center">
+                    <div class="info info-hover">
+                        <div class="icon icon-warning">
+                            <i class="fas fa-feather"></i>
+                        </div>
+                        <h4 class="info-title">Valor 5</h4>
+                        <p class="description">Gain access to the demographics, psychographics, and location of unique
+                            people.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-xl-4 col-md-4 col-lg-4 text-center">
+                    <div class="info info-hover">
+                        <div class="icon icon-warning">
+                            <i class="far fa-handshake"></i>
+                        </div>
+                        <h4 class="info-title">Valor 6</h4>
+                        <p class="description">Gain access to the demographics, psychographics, and location of unique
+                            people.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <!--Servicios-->
@@ -372,43 +470,42 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain">
                 <div class="card animated bounceInLeft wow">
-                    <img src="/img/servicio1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body ">
-                        <h5 class="card-title">Servicio1</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    <img src="/img/servicio1.jpg" class="card-img-top image1" alt="...">
+                    <div class="card-body overlay">
+                        <h3 class="card-title text">Servicio1</h3>
+                        <p class="card-text text">Some quick example text to build on the card title and make up the
+                            bulk of
                             the card's content.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-primary  btn-round">Ver más</a>
-                        </div>
+
 
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain">
                 <div class="card animated bounceInLeft wow">
-                    <img src="/img/servicio2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Servicio2</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    <img src="/img/servicio2.jpg" class="card-img-top image2" alt="...">
+                    <div class="card-body overlay2">
+                        <h3 class="card-title text2">Servicio2</h3>
+                        <p class="card-text text2">Some quick example text to build on the card title and make up the
+                            bulk of
                             the card's content.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-primary  btn-round">Ver más</a>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain">
                 <div class="card animated bounceInLeft wow">
-                    <img src="/img/servicio3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Servicio3</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    <img src="/img/servicio3.jpg" class="card-img-top image3" alt="...">
+                    <div class="card-body overlay3">
+                        <h3 class="card-title text">Servicio3</h3>
+                        <p class="card-text text">Some quick example text to build on the card title and make up the
+                            bulk of
                             the card's content.</p>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-primary  btn-round">Ver más</a>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -535,11 +632,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 ml-auto mr-auto">
-                    <div class="card card-contact card-raised animated zoomIn wow">
+                <div class="col-md-5 ml-auto mr-auto text-light">
+                    <div class="animated zoomIn wow">
                         <form role="form" id="contact-form1" method="post">
-                            <div class="card-header text-center">
-                                <h4 class="card-title">Contactanos</h4>
+                            <div class=" text-center">
+                                <h4 class="card-title text-light">Contactanos</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -550,7 +647,7 @@
                                                 <span class="input-group-text"><i
                                                         class="now-ui-icons users_circle-08"></i></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Nombre..."
+                                            <input type="text" class="form-control inputC" placeholder="Nombre..."
                                                 aria-label="First Name..." autocomplete="given-name">
                                         </div>
                                     </div>
@@ -562,7 +659,7 @@
                                                     <span class="input-group-text"><i
                                                             class="now-ui-icons text_caps-small"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Apellido..."
+                                                <input type="text" class="form-control inputC" placeholder="Apellido..."
                                                     aria-label="Last Name..." autocomplete="family-name">
                                             </div>
                                         </div>
@@ -575,7 +672,7 @@
                                             <span class="input-group-text"><i
                                                     class="now-ui-icons ui-1_email-85"></i></span>
                                         </div>
-                                        <input type="email" class="form-control" placeholder="Correo..."
+                                        <input type="email" class="form-control inputC" placeholder="Correo..."
                                             autocomplete="email">
                                     </div>
                                 </div>
@@ -586,7 +683,7 @@
                                 <div class="row">
 
                                     <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-round ">Enviar</button>
+                                        <button type="submit" class="btn btn-warning btn-round " style="">Enviar</button>
                                     </div>
                                 </div>
                             </div>
