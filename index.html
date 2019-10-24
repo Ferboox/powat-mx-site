@@ -48,8 +48,30 @@
             z-index: 999;
 
         }
-      
-
+        .text{
+            color:white;
+            font-weight: 900;
+            display: none;
+        }
+        .text2{
+            color:white;
+            font-weight: 900;
+            display: none;
+        }
+        .text3{
+            color:white;
+            font-weight: 900;
+            display: none;
+        }
+        .contain:hover .text{
+            display:block;
+        }
+        .contain:hover .text2{
+            display:block;
+        }
+        .contain:hover .text3{
+            display:block;
+        }
         .boton:hover {
             opacity: 0.50;
             -moz-opacity: .50;
@@ -70,9 +92,8 @@
             right: 0;
             height: 100%;
             width: 100%;
-            opacity: 0;
             transition: .5s ease;
-            background-color: white;
+            background-color: rgb(255, 175, 13, 0);
         }
 
         .overlay2 {
@@ -83,9 +104,8 @@
             right: 0;
             height: 100%;
             width: 100%;
-            opacity: 0;
             transition: .5s ease;
-            background-color: white;
+            background-color: rgb(255, 175, 13, 0);
         }
 
         .overlay3 {
@@ -96,22 +116,21 @@
             right: 0;
             height: 100%;
             width: 100%;
-            opacity: 0;
             transition: .5s ease;
-            background-color: white;
+            background-color: rgb(255, 175, 13, 0);
         }
 
 
         .contain:hover .overlay {
-            opacity: 0.8;
+            background-color: rgb(255, 175, 13, 0.8);
         }
 
         .contain:hover .overlay2 {
-            opacity: 0.8;
+            background-color: rgb(255, 175, 13, 0.8);
         }
 
         .contain:hover .overlay3 {
-            opacity: 0.8;
+            background-color: rgb(255, 175, 13, 0.8);
         }
 
 
@@ -500,8 +519,8 @@
                 <div class="card animated bounceInLeft wow">
                     <img src="/img/servicio3.jpg" class="card-img-top image3" alt="...">
                     <div class="card-body overlay3">
-                        <h3 class="card-title text">Servicio3</h3>
-                        <p class="card-text text">Some quick example text to build on the card title and make up the
+                        <h3 class="card-title text3">Servicio3</h3>
+                        <p class="card-text text3">Some quick example text to build on the card title and make up the
                             bulk of
                             the card's content.</p>
 
