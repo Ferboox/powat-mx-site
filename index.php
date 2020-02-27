@@ -133,8 +133,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             color: white;
             font-weight: 900;
             display: none;
-            justify-content: center;
-            align-items: center;
+    
 
         }
 
@@ -310,8 +309,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             top: 50%;
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 20%;
+            margin-right: 20%;
         }
 
 
@@ -523,7 +522,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 text-left">
                 <div class="card contain animated bounceInLeft wow" onclick="myFunction2()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio3.jpg" class="card-img-top image2" alt="">
                     <div class="card-body overlay">
