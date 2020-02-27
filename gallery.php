@@ -130,7 +130,7 @@
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="#pablo">
-                    <a class="navbar-brand " href="index.html"> <img src="img/logo.png" class="img-fluid float-left"
+                    <a class="navbar-brand " href="index.php"> <img src="img/logo.png" class="img-fluid float-left"
                             alt="" id="logo"></a>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -144,28 +144,28 @@
             <div class="collapse navbar-collapse show">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html#nosotros">
+                        <a class="nav-link" href="index.php#nosotros">
                             <p>Nosotros</p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#servicios">
+                        <a class="nav-link" href="index.php#servicios">
                             <p>Servicios</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">
+                        <a class="nav-link" href="gallery.php">
                             <p>Galeria</p>
                         </a>
                     </li> <!--
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#clientes">
+                        <a class="nav-link" href="index.php#clientes">
                             <p>Clientes</p>
                         </a>
                     </li>-->
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#contacto">
+                        <a class="nav-link" href="index.php#contacto">
                             <p>Contacto</p>
                         </a>
                     </li>
@@ -375,12 +375,12 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html" id="script1">
+                        <a href="index.php" id="script1">
                             Nosotros
                         </a>
                     </li>
                     <li>
-                        <a href="index.html" id="script2">
+                        <a href="index.php" id="script2">
                             Servicios
                         </a>
                     </li>
@@ -391,7 +391,7 @@
                     </li>
                 <!--
                     <li>
-                        <a href="index.html" id="script4">
+                        <a href="index.php" id="script4">
                             Clientes
                         </a>
                     </li> -->

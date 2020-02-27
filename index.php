@@ -1,3 +1,64 @@
+<?php
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+$msg  = "";
+if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['txtEmpresa']) && isset($_POST['txtEmail']) && isset($_POST['txtTelefono']) && isset($_POST['txtMensaje'])  && $_POST['txtNombre'] != "" && $_POST['txtApellido'] != "" && $_POST['txtEmpresa'] != "" && $_POST['txtEmail'] != "" && $_POST['txtTelefono'] != ""  && $_POST['txtMensaje'] != "") {
+
+
+
+    // Load Composer's autoloader
+    require 'vendor/autoload.php';
+
+    // Instantiation and passing true enables exceptions
+    $mail = new PHPMailer(true);
+
+    try {
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host       = 'mail.guimea.com';                    // Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+        $mail->Username   = 'noreply@guimea.com';                     // SMTP username
+        $mail->Password   = 'AdministracionGuimea123';                               // SMTP password
+        $mail->SMTPSecure = 'tls';      // Enable TLS encryption; PHPMailer::ENCRYPTION_SMTPS also accepted
+        $mail->Port       = 587;                                    // TCP port to connect to
+
+        //Recipients
+        $mail->SetFrom('noreply@guimea.com', 'No reply');
+        $mail->addAddress('servicios@powatt.mx', 'Union Ganadera');     // Add a recipient         // Name is optional
+
+        $mail->addReplyTo('noreply@guimea.com', 'No reply');
+
+
+        // Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = 'Contacto de la pagina web';
+        $mail->Body    = "<p>Una nueva persona ha enviado su informacion a traves de la forma de contacto del sitio web.</p>
+        
+        <p>Su Informacion es la siguiente:</p>
+        <p>Nombre:" . $_POST['txtNombre'] .  $_POST['txtApellido'] . "</p>
+        <p>Empresa:" . $_POST['txtEmpresa'] . "</p>
+        <p>Email: " . $_POST['txtEmail'] . "</p>
+        <p>Telefono de Contacto:" . $_POST['txtTelefono'] . "</p>
+        <p>Mensaje:" . $_POST['txtMensaje'] . "</p>
+        ";
+        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        $mail->send();
+
+        echo '<script>alert("Se mando el mensaje con exito.")</script>';
+        $msg = "El mensaje fue enviado con exito";
+    } catch (Exception $e) {
+        echo '<script>alert("Message could not be sent. Mailer Error: {$mail->ErrorInfo}")</script>';
+        // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +83,16 @@
     <!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200|Open+Sans+Condensed:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="assets/demo/demo.css" rel="stylesheet" />
+
+
 
     <link href="css/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -34,6 +105,16 @@
         .zero {
             padding: 0%;
             margin: 0%;
+        }
+
+        .card-azul {
+            background-color: #4a5a65;
+            padding: 10%;
+
+        }
+
+        .white {
+            color: white !important;
         }
 
         .boton {
@@ -52,6 +133,9 @@
             color: white;
             font-weight: 900;
             display: none;
+            justify-content: center;
+            align-items: center;
+
         }
 
         .text2 {
@@ -140,6 +224,12 @@
         }
 
 
+        .slogan {
+            color: white;
+            font-weight: bold !important;
+            margin-top: -400px;
+            text-align: center;
+        }
 
         .row {
             margin-bottom: 20px;
@@ -153,6 +243,9 @@
             background-color: white !important;
         }
 
+        .cotiza {
+            font-size: 20px;
+        }
 
 
 
@@ -173,9 +266,6 @@
 
 
 
-        .nav-link {
-            color: black !important;
-        }
 
         .navbar-toggler-bar {
             background-color: black !important;
@@ -214,7 +304,15 @@
             filter: blur(1px);
         }
 
+        .vertical-center {
 
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            margin-left: auto;
+            margin-right: auto;
+        }
 
 
 
@@ -241,17 +339,11 @@
             font-size: 35px;
         }
 
-        .navbar-nav {
-            background-color: #fff !important;
 
-        }
 
-        p {
-            color: black;
-        }
 
         @media screen and (max-width: 800px) {
-            .focus {
+            .slogan {
                 display: none !important;
             }
 
@@ -270,6 +362,7 @@
             .img2 {
                 display: none !important;
             }
+
         }
 
 
@@ -307,7 +400,7 @@
 
 <body>
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg fixed-top zero " style="background-color: white!important;">
+    <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent fixed-top zero" color-on-scroll="500">
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="#pablo">
@@ -319,9 +412,10 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse show" id="example-navbar-primary" data-nav-image="./assets/img//blurred-image-1.jpg">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+            <div class="collapse navbar-collapse show" id="example-navbar-primary" data-nav-image="assets/img//blurred-image-1.jpg">
+                <ul class="navbar-nav ml-auto" id="ceva">
+
+                    <li class="nav-item ">
                         <a class="nav-link" href="#nosotros" id="script1">
                             <p>Nosotros</p>
                         </a>
@@ -332,11 +426,12 @@
                             <p>Servicios</p>
                         </a>
                     </li>
+                    <!--
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">
+                        <a class="nav-link" href="gallery.php">
                             <p>Galeria</p>
                         </a>
-                    </li> <!--
+                    </li> 
                     <li class="nav-item">
                         <a class="nav-link" href="#clientes" id="script4">
                             <p>Clientes</p>
@@ -356,8 +451,12 @@
     <div class="container-fluid zero contenedor danger">
         <div class="row zero">
             <div class="col-12 zero">
+
                 <img src="img/img1.jpg" class="img-responsive img-fluid animated fadeIn" alt="">
-               
+            </div>
+            <div class="col-12 slogan">
+                <h2 class="s">“La energía no se crea ni se destruye, Powatt la transforma”</h2>
+                <a type="submit" class="btn btn-warning btn-round  cotiza" href="#contacto">Cotiza</a>
             </div>
         </div>
     </div>
@@ -366,16 +465,22 @@
     <div class="section section-about-us" id="nosotros">
         <div class="container">
             <div class="row">
+
                 <div class="col-md-8 ml-auto mr-auto text-center">
-                    <h2 class="title">¿Quiénes somos?</h2>
-                    <h5 class="description animated slideInUp wow">Somos una empresa especializada en brindar servicios y soluciones electromecánicas para los sectores de energía, electricidad, industria y comercio.</h5>
+                    <div class="card card-azul">
+                        <div class="card-content">
+                            <h2 class="title white">¿Quiénes somos?</h2>
+                            <h5 class="description white animated slideInUp wow">Somos una empresa especializada en brindar servicios y soluciones eléctricas en todos los sectores.</h5>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
-       <!--Presencia-->
-       <div class="section section-about-us" id="nosotros">
+    <!--Presencia-->
+    <div class="section section-about-us" id="nosotros">
         <div class="container">
             <div class="row">
                 <div class="col ml-auto mr-auto text-center">
@@ -385,8 +490,8 @@
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">
                     <img src="img/presencia.jpg" class="img-responsive img-fluid animated fadeIn" alt="">
-                        
-                    </div>
+
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto text-center">
@@ -397,6 +502,7 @@
 
         </div>
     </div>
+
 
     <!--Servicios-->
     <div class="container" id="servicios">
@@ -409,140 +515,111 @@
             </div>
         </div>
         <div class="row">
-          
-
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ">Diseño de ingeniería y de detalle</h4>
-                <div class="card ">
-                    <img src="img/servicio2.jpg" class="img-responsive img-fluid" alt="">
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction1()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio2.jpg" class="card-img-top image1" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Diseño de ingeniería</h4>
+                    </div>
                 </div>
-                <ul>
-                    <li> Asesoría en proyecto</li>
-                    <li> Diseño de proyecto de baja y media tensión para las áreas comercial, industrial y torres departamentales.</li>
-                </ul>
+            </div>
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction2()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio3.jpg" class="card-img-top image2" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Suministro de material eléctrico</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction3()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio4.jpg" class="card-img-top image3" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Código de red</h4>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ">Suministro de material eléctrico</h4>
-                <div class="card ">
-                    <img src="img/servicio3.jpg" class="img-responsive img-fluid" alt="">
+
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction4()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio5.jpg" class="card-img-top image4" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Sistema fotovoltaicos</h4>
+                    </div>
                 </div>
-                <ul>
-                    <li> Material eléctrico para las áreas doméstica, comercial e industrial en baja y media tensión. </li>
-                    <li> Productos fotovoltaicos de alto rendimiento.</li>
-                    <li>  Accesorios en general.</li>
-                </ul>
             </div>
-        
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ">Código de red</h4>
-                <div class="card ">
-                    <img src="img/servicio4.jpg" class="img-responsive img-fluid" alt="">
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction5()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio7.jpg" class="card-img-top image5" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Mantenimiento eléctrico</h4>
+                    </div>
                 </div>
-                <ul>
-                   <li>Estudios requeridos para cumplir con el código</li>
-                  <li> Trámites </li>
-                </ul>
+            </div>
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction6()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio1.jpg" class="card-img-top image9" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Trámites con compañías suministradoras</h4>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ"> Instalación y diseño de sistema fotovoltaico</h4>
-                <div class="card ">
-                    <img src="img/servicio5.jpg" class="img-responsive img-fluid" alt="">
+
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction7()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio10.png" class="card-img-top image7" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Estudios eléctricos</h4>
+                    </div>
                 </div>
-                <ul>
-                    <li>Estudio por medio de software especializado PVSIST.</li>
-                </ul>
             </div>
-        
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ">Mantenimiento eléctrico</h4>
-                <div class="card ">
-                    <img src="img/servicio7.jpg" class="img-responsive img-fluid" alt="">
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction8()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio9.jpg" class="card-img-top image8" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center">Diagnóstico y pruebas eléctricas</h4>
+                    </div>
                 </div>
-                <ul>
-                    <li> Subestaciones </li>
-                    <li>Transformadores</li>
-                    <li>Electroductos</li>
-                    <li>Tableros</li>
-                </ul>
+            </div>
+            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+                <div class="card contain animated bounceInLeft wow" onclick="myFunction9()" data-toggle="modal" data-target="#exampleModal">
+                    <img src="img/servicio6.jpg" class="card-img-top image9" alt="">
+                    <div class="card-body overlay">
+                        <h4 class="card-title text vertical-center"> Construcción</h4>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ"> Eficiencia energética</h4>
-                <div class="card ">
-                    <img src="img/servicio8.jpg" class="img-responsive img-fluid" alt="">
-                </div>
-                <ul>
-                    <li>Medición y monitoreo para reducción de pérdidas.</li>
-                </ul>
-            </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ">Estudios eléctricos</h4>
-                <div class="card ">
-                    <img src="img/servicio10.png" class="img-responsive img-fluid" alt="">
-                </div>
-                <ul>
-                    <li>Corto circuito </li> 
-                    <li> Coordinación de protecciones </li> 
-                    <li> Arc Flash </li> 
-                    <li> Sistema de tierras </li> 
-                    <li> Blindaje de acuerdo a NMX-J-549-ANCE-2005 </li> 
-                    <li> Flujos de potencia </li> 
-                    <li> Áreas clasificadas de acuerdo a la NOM-001-SEDE-2012 </li> 
-                    <li>Calidad de energía </li> 
-                    <li> Análisis de contingencias </li> 
-                    <li> Análisis de demanda y cargabilidad de dispositivos  </li> 
-                    <li> Estudios de estabilidad de voltaje y transitorios </li> 
-                </ul>
-            </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ"> Diagnóstico y pruebas eléctricas</h4>
-                <div class="card ">
-                    <img src="img/servicio9.jpg" class="img-responsive img-fluid" alt="">
-                </div>
-                <ul>
-                    <li> Relación de transformación</li>
-                    <li> Resistencia de aislamiento </li>
-                    <li>Resistencia óhmica de devanados</li>
-                    <li>Factor de potencia y corriente de excitación</li>
-                   <li> Medición de sistema de tierras </li>
-                    <li>Pruebas de aceite aislante</li>
-                    <li>Termografía</li>
-                    <li>VLF(Voltage Low Frequency)</li>
-                </ul>
-            </div>
-        
-            
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ"> Construcción</h4>
-                <div class="card ">
-                    <img src="img/servicio6.jpg" class="img-responsive img-fluid" alt="">
-                </div>
-                <ul>
-                    <li> Montaje electromecánico. </li>
-                    <li> Subestaciones de baja y media tensión. </li>
-                    <li> Subestaciones de baja y media tensión. </li>
-                    <li> Instalaciones de sistemas fotovoltáicos </li>
-                    <li> Instalación de baja y media tensión (charola, electroducto, tubería, líneas subterráneas y aéreas. </li>
-                </ul>
-            </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 contain animated bounceInLeft wow">
-                <h4 class="text-center tituloServ">Trámites con compañías suministradoras y asesoría</h4>
-                <div class="card ">
-                    <img src="img/servicio1.jpg" class="img-responsive img-fluid" alt="">
-                </div>
-                <ul>
-                    <li> CENACE Centro Nacional de Control de Energía</li>
-                    <li> CFE Comisión Federal de Electricidad</li>
-                    <li> CRE Comisión Reguladora de Energía</li>
-                    <li> UVIE Unidades de Verificación en Instalaciones Eléctricas</li>
-                </ul>
-            </div>
+
+
         </div>
 
     </div>
-    <!--Galeria-->
+    <!--Modal servicios-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titulo">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <ul id="lista"></ul>
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Galeria
     <div class="container" id="galeria">
         <div class="row ">
             <div class="col-12 columna text-center">
@@ -562,7 +639,7 @@
                 <img src="img/galeria3.jpg" class="img-responsive img-fluid" alt="">
             </div>
             <div class=" img col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                <a href="gallery.html">
+                <a href="gallery.php">
                     <img src="img/galeria14.jpg" class="img-responsive  more img-fluid" alt="">
                     <div class="plus">
                         <i class="fas fa-plus fa-4x"></i>
@@ -575,7 +652,7 @@
             </div>
         </div>
     </div>
-    <!--Clientes
+    Clientes
     <div class="container">
         <div class="row " id="clientes">
             <div class="col-12 columna text-center">
@@ -639,8 +716,8 @@
                     <h4 class="description">¿Necesitas más información? Busca nuestras oficinas o contacta con nosotros
                         para saber más.</h4>
                     <div class="info info-horizontal  animated zoomIn wow">
-                        
-                        
+
+
                     </div>
                     <div class="info info-horizontal animated zoomIn wow">
                         <div class="icon icon-primary">
@@ -658,7 +735,7 @@
                 </div>
                 <div class="col-md-5 ml-auto mr-auto text-light">
                     <div class="animated zoomIn wow">
-                        <form role="form" id="contact-form1" method="post">
+                        <form role="form" id="contact-form1" method="POST" action="index.php">
                             <div class=" text-center">
                                 <h4 class="card-title text-light">Contactanos</h4>
                             </div>
@@ -670,7 +747,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
                                             </div>
-                                            <input type="text" class="form-control inputC" placeholder="Nombre..." aria-label="First Name..." autocomplete="given-name">
+                                            <input required type="text" class="form-control inputC" placeholder="Nombre..." name="txtNombre" aria-label="First Name..." autocomplete="given-name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-2">
@@ -680,7 +757,29 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="now-ui-icons text_caps-small"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control inputC" placeholder="Apellido..." aria-label="Last Name..." autocomplete="family-name">
+                                                <input required type="text" class="form-control inputC" name="txtApellido" placeholder="Apellido..." aria-label="Last Name..." autocomplete="family-name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 pr-2">
+                                        <label>Empresa</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="now-ui-icons business_badge"></i></span>
+                                            </div>
+                                            <input required type="text" class="form-control inputC" name="txtEmpresa" placeholder="Empresa..." aria-label="First Name..." autocomplete="given-name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pl-2">
+                                        <div class="form-group">
+                                            <label>Teléfono</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="now-ui-icons tech_mobile"></i></span>
+                                                </div>
+                                                <input required type="text" class="form-control inputC" name="txtTelefono" placeholder="Telefono..." aria-label="Last Name..." autocomplete="family-name">
                                             </div>
                                         </div>
                                     </div>
@@ -691,12 +790,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
                                         </div>
-                                        <input type="email" class="form-control inputC" placeholder="Correo..." autocomplete="email">
+                                        <input required type="email" name="txtEmail" class="form-control inputC" placeholder="Correo..." autocomplete="email">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Tu mensaje</label>
-                                    <textarea name="message" class="form-control" id="message" rows="6"></textarea>
+                                    <textarea required name="txtMensaje" class="form-control" id="message" rows="6"></textarea>
                                 </div>
                                 <div class="row">
 
@@ -729,11 +828,12 @@
                             Servicios
                         </a>
                     </li>
+                    <!--
                     <li>
                         <a href="#galeria" id="script3">
                             Galeria
                         </a>
-                    </li> <!--
+                    </li> 
                     <li>
                         <a href="#clientes" id="script4">
                             Clientes
@@ -756,10 +856,26 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <!--   Core JS Files   -->
-    <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="assets/js/plugins/bootstrap-switch.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+    <script src="assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script src="assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="assets/js/plugins/bootstrap-selectpicker.js" type="text/javascript"></script>
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+
     <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
-    <script src="./assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
+    <script src="assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
     <script>
         $('#script1').on('click', function(e) {
             e.preventDefault();
@@ -793,6 +909,103 @@
         });
     </script>
 
+    <script>
+        function myFunction6() {
+            var titulo_data = "TRÁMITES ANTE COMPAÑÍAS SUMINISTRADORAS";
+            var lista_data = "<li> <b>CENACE</b> Centro Nacional de Control de Energía</li>";
+            lista_data = lista_data + "<li> <b>CFE</b> Comisión Federal de Electricidad</li>";
+            lista_data = lista_data + "<li> <b>CRE</b> Comisión Reguladora de Energía</li>";
+            lista_data = lista_data + "<li> <b>UVIE</b> Unidades de Verificación en Instalaciones Eléctricas</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction1() {
+            var titulo_data = "DISEÑO DE INGENIERÍA";
+            var lista_data = "<li> Diseño de proyecto de baja, media y alta tensión para las áreas comercial, industrial y torres departamentales.</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction2() {
+            var titulo_data = "SUMINISTRO DE MATERIAL ELÉCTRICO";
+            var lista_data = "<li>Material eléctrico para residencial, comercial, industrial y hospitalario.</li>";
+            lista_data = lista_data + "<li> Productos fotovoltaicos de alto rendimiento.</li>";
+            lista_data = lista_data + "<li> Accesorios en general.</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction3() {
+            var titulo_data = "CÓDIGO DE RED";
+            var lista_data = "<li>Estudios y trámites requeridos para cumplir con el código</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction4() {
+            var titulo_data = "SISTEMAS FOTOVOLTAICOS";
+            var lista_data = "<li>Estudio por medio de PVSIST</li>";
+            lista_data = lista_data + "<li> Monitoreo las 24 horas por una app</li>";
+            lista_data = lista_data + "<li> Instalación y suministro de materiales EPC</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction9() {
+            var titulo_data = "CONSTRUCCIÓN";
+            var lista_data = "<li>Subestaciones de baja, media y alta tensión.</li>";
+            lista_data = lista_data + "<li> Instalaciones de sistemas fotovoltaicos</li>";
+            lista_data = lista_data + "<li> Instalación de baja, media y alta tensión (charola, electroducto, tubería, líneas subterráneas y aéreas.</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction5() {
+            var titulo_data = "MANTENIMIENTO ELÉCTRICO";
+            var lista_data = "<li>Subestaciones</li>";
+            lista_data = lista_data + "<li> Transformadores</li>";
+            lista_data = lista_data + "<li> Electroductos</li>";
+            lista_data = lista_data + "<li> Tableros</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction8() {
+            var titulo_data = "DIAGNÓSTICO Y PRUEBAS ELÉCTRICAS";
+            var lista_data = "<li>Relación de transformación</li>";
+            lista_data = lista_data + "<li> Resistencia de aislamiento</li>";
+            lista_data = lista_data + "<li> Resistencia óhmica de devanados</li>";
+            lista_data = lista_data + "<li> Pruebas de aceite aislante</li>";
+            lista_data = lista_data + "<li> Factor de potencia y corriente de excitación</li>";
+            lista_data = lista_data + "<li> Medición de sistema de tierras</li>";
+            lista_data = lista_data + "<li> VLF(Voltage Low Frequency)</li>";
+            lista_data = lista_data + "<li> Termografía</li>";
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+
+        function myFunction7() {
+            var titulo_data = "Estudios eléctricos";
+            var lista_data = "<li>Corto circuito</li>";
+            lista_data = lista_data + "<li> Coordinación de protecciones</li>";
+            lista_data = lista_data + "<li> Arc Flash </li>";
+            lista_data = lista_data + "<li> Sistema de tierras </li>";
+            lista_data = lista_data + "<li> Blindaje de acuerdo a NMX-J-549-ANCE-2005 </li>";
+            lista_data = lista_data + "<li> Flujos de potencia </li>";
+            lista_data = lista_data + "<li> Áreas clasificadas de acuerdo a la NOM-001-SEDE-2012 </li>";
+            lista_data = lista_data + "<li> Calidad de energía </li>";
+            lista_data = lista_data + "<li> Análisis de contingencias </li>";
+            lista_data = lista_data + "<li> Análisis de demanda y cargabilidad de dispositivos </li>";
+            lista_data = lista_data + "<li> Estudios de estabilidad de voltaje y transitorios </li>";
+            lista_data = lista_data + "<li> Modelado de funcionamiento de planta por medio de DIGSILENT </li>";
+            lista_data = lista_data + "<li> Modelado matemático de sistemas eléctricos </li>";
+
+
+            document.getElementById("titulo").innerHTML = titulo_data;
+            document.getElementById("lista").innerHTML = lista_data;
+        }
+    </script>
 </body>
 
 </html>
