@@ -103,8 +103,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     <title>Powatt</title>
     <style>
         .zero {
-            padding: 0%;
-            margin: 0%;
+            padding: 0%!important;
+            margin: 0%!important;
         }
 
         .card-azul {
@@ -133,7 +133,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             color: white;
             font-weight: 900;
             display: none;
-    
+
 
         }
 
@@ -447,7 +447,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     </nav>
     <!--Cabecera-->
 
-    <div class="container-fluid zero contenedor danger">
+    <div class="container-fluid zero contenedor ">
         <div class="row zero">
             <div class="col-12 zero">
 
@@ -461,25 +461,21 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     </div>
 
     <!--nosotros-->
-    <div class="section section-about-us" id="nosotros">
-        <div class="container">
-            <div class="row">
+    <div class="container-fluid  card-azul" >
+        <div class="row" id="nosotros">
 
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    <div class="card card-azul">
-                        <div class="card-content">
-                            <h2 class="title white">¿Quiénes somos?</h2>
-                            <h5 class="description white animated slideInUp wow">Somos una empresa especializada en brindar servicios y soluciones eléctricas en todos los sectores.</h5>
+            <div class="col-md-8 ml-auto mr-auto text-center">
 
-                        </div>
-                    </div>
-                </div>
+                <h2 class="title white">¿Quiénes somos?</h2>
+                <h5 class="description white animated slideInUp wow">Somos una empresa especializada en brindar servicios y soluciones eléctricas en todos los sectores.</h5>
+
             </div>
-
         </div>
+
     </div>
+
     <!--Presencia-->
-    <div class="section section-about-us" id="nosotros">
+    <div class="section section-about-us">
         <div class="container">
             <div class="row">
                 <div class="col ml-auto mr-auto text-center">
@@ -504,9 +500,9 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
 
     <!--Servicios-->
-    <div class="container" id="servicios">
+    <div class="container">
 
-        <div class="row ">
+        <div class="row "  id="servicios">
             <div class="col-12 columna text-center">
                 <h2>
                     <b>NUESTROS SERVICIOS</b>
