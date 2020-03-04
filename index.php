@@ -103,8 +103,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     <title>Powatt</title>
     <style>
         .zero {
-            padding: 0%!important;
-            margin: 0%!important;
+            padding: 0% !important;
+            margin: 0% !important;
         }
 
         .card-azul {
@@ -113,8 +113,15 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
         }
 
+        .card-azul2 {
+            background-color: #8593AF;
+            padding: 10%;
+
+        }
+
         .white {
             color: white !important;
+            font-weight: bold;
         }
 
         .boton {
@@ -136,30 +143,55 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
 
         }
+        .contain {
 
-        .text2 {
+            cursor: pointer !important;
+        }
+
+
+
+        .contain .text {
+            display: block;
             color: white;
-            font-weight: 900;
-            display: none;
         }
 
-        .text3 {
-            color: white;
-            font-weight: 900;
-            display: none;
+
+
+
+        .img-contenedor {
+            background-color: rgb(255, 175, 13, 0.8);
         }
 
-        .contain:hover .text {
-            display: block;
+        .img-contenedor img {
+
+            -webkit-transition: all .9s ease;
+            /* Safari y Chrome */
+            -moz-transition: all .9s ease;
+            /* Firefox */
+            -o-transition: all .9s ease;
+            /* IE 9 */
+            -ms-transition: all .9s ease;
+            /* Opera */
+            width: 100%;
         }
 
-        .contain:hover .text2 {
-            display: block;
+        .img-contenedor {
+            /*Ancho y altura son modificables al requerimiento de cada uno*/
+            width: 360px;
+            height: 240px;
+            overflow: hidden;
         }
 
-        .contain:hover .text3 {
-            display: block;
+        .img-contenedor:hover img {
+
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            transform: scale(1.1);
         }
+
+
 
         .boton:hover {
             opacity: 0.50;
@@ -185,43 +217,11 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             background-color: rgb(255, 175, 13, 0);
         }
 
-        .overlay2 {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            transition: .5s ease;
-            background-color: rgb(255, 175, 13, 0);
-        }
-
-        .overlay3 {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            transition: .5s ease;
-            background-color: rgb(255, 175, 13, 0);
-        }
 
 
-        .contain:hover .overlay {
+        .contain .overlay {
             background-color: rgb(255, 175, 13, 0.8);
         }
-
-        .contain:hover .overlay2 {
-            background-color: rgb(255, 175, 13, 0.8);
-        }
-
-        .contain:hover .overlay3 {
-            background-color: rgb(255, 175, 13, 0.8);
-        }
-
 
         .slogan {
             color: white;
@@ -274,33 +274,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             padding-right: 50px;
         }
 
-        .plus {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fcfafa;
-            font-size: 100%;
-            font-weight: 900;
-        }
-
-        .mas {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #f1f1f1;
-            font-size: 100%;
-            display: block;
-            font-weight: 900;
-        }
-
         .img {
             margin-bottom: 15px;
-        }
-
-        .more {
-            filter: blur(1px);
         }
 
         .vertical-center {
@@ -309,34 +284,10 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             top: 50%;
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            margin-left: 20%;
-            margin-right: 20%;
+            margin-left: 22%;
+            margin-right: 22%;
         }
 
-
-
-        .focus {
-            top: 40%;
-            left: 50%;
-            color: white;
-            font-size: 40px;
-            font-weight: 900;
-        }
-
-        .centrado1 {
-            top: 30%;
-            left: 50%;
-            color: white;
-            font-size: 40px;
-            font-weight: 900;
-        }
-
-        .centrado2 {
-            top: 67%;
-            left: 50%;
-            color: white;
-            font-size: 35px;
-        }
 
 
 
@@ -346,54 +297,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 display: none !important;
             }
 
-            .mas {
-                display: none;
-            }
-
-            .centrado1 {
-                display: none !important;
-            }
-
-            .centrado2 {
-                display: none !important;
-            }
-
-            .img2 {
-                display: none !important;
-            }
-
         }
 
-
-        @media screen and (min-width: 1000px) {
-            .img1 {
-                display: none !important;
-
-            }
-
-            .img2 {
-                display: block !important;
-                margin-top: 400px;
-            }
-
-            .hey {
-                margin-top: 0% !important;
-            }
-        }
-
-        @media screen and (max-width: 1200px) and (min-width: 800px) {
-            .img2 {
-                display: none !important;
-            }
-
-            .img1 {
-                display: none !important;
-            }
-
-
-
-
-        }
     </style>
 </head>
 
@@ -461,7 +366,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     </div>
 
     <!--nosotros-->
-    <div class="container-fluid  card-azul" >
+    <div class="container-fluid  card-azul">
         <div class="row" id="nosotros">
 
             <div class="col-md-8 ml-auto mr-auto text-center">
@@ -475,35 +380,31 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     </div>
 
     <!--Presencia-->
-    <div class="section section-about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col ml-auto mr-auto text-center">
-                    <h2 class="title">Presencia</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 ml-auto mr-auto text-center">
-                    <img src="img/presencia.jpg" class="img-responsive img-fluid animated fadeIn" alt="">
 
-                </div>
+    <div class="container-fluid card-azul2">
+        <div class="row">
+            <div class="col ml-auto mr-auto text-center">
+                <h2 class="title white">Presencia</h2>
             </div>
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    <h5 class="description animated slideInUp wow">Nuestra presencia cubre todo el territorio nacional.</h5>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center">
+                <img src="img/presencia.jpg" class="img-responsive img-fluid animated fadeIn" alt="">
 
             </div>
-
+        </div>
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+                <h5 class="description animated slideInUp wow white">Nuestra presencia cubre todo el territorio nacional.</h5>
+            </div>
         </div>
     </div>
-
 
     <!--Servicios-->
     <div class="container">
 
-        <div class="row "  id="servicios">
-            <div class="col-12 columna text-center">
+        <div class="row " id="servicios">
+            <div class="col-12 columna text-center pt-5 mt-5">
                 <h2>
                     <b>NUESTROS SERVICIOS</b>
                 </h2>
@@ -511,7 +412,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
         </div>
         <div class="row">
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction1()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction1()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio2.jpg" class="card-img-top image1" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Diseño de ingeniería</h4>
@@ -519,7 +420,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 text-left">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction2()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction2()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio3.jpg" class="card-img-top image2" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Suministro de material eléctrico</h4>
@@ -527,17 +428,15 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction3()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction3()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio4.jpg" class="card-img-top image3" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Código de red</h4>
                     </div>
                 </div>
             </div>
-
-
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction4()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction4()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio5.jpg" class="card-img-top image4" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Sistema fotovoltaicos</h4>
@@ -545,7 +444,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction5()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction5()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio7.jpg" class="card-img-top image5" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Mantenimiento eléctrico</h4>
@@ -553,7 +452,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction6()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction6()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio1.jpg" class="card-img-top image9" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Trámites con compañías suministradoras</h4>
@@ -563,7 +462,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
 
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction7()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction7()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio10.png" class="card-img-top image7" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Estudios eléctricos</h4>
@@ -571,7 +470,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction8()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction8()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio9.jpg" class="card-img-top image8" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center">Diagnóstico y pruebas eléctricas</h4>
@@ -579,7 +478,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-                <div class="card contain animated bounceInLeft wow" onclick="myFunction9()" data-toggle="modal" data-target="#exampleModal">
+                <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction9()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio6.jpg" class="card-img-top image9" alt="">
                     <div class="card-body overlay">
                         <h4 class="card-title text vertical-center"> Construcción</h4>
@@ -723,7 +622,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                             <p class="description">
                                 Correo: servicios@powatt.mx
                                 <br> Celular: 4444190487
-                                <br> Whatssap: 4446573738
+                                <br> Whatssap: 4444811212
                             </p>
                         </div>
                     </div>
@@ -803,7 +702,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                     </div>
                 </div>
             </div>
-            <a class="btn boton btn-success" href="https://api.whatsapp.com/send?phone=524446573738">
+            <a class="btn boton btn-success" href="https://api.whatsapp.com/send?phone=524444811212">
                 <i class="fab fa-whatsapp fa-2x" style="color:white;"></i></a>
 
         </div>
