@@ -143,6 +143,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
 
         }
+
         .contain {
 
             cursor: pointer !important;
@@ -262,10 +263,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             margin-right: 10px auto !important;
         }
 
-
-
-
-
         .navbar-toggler-bar {
             background-color: black !important;
         }
@@ -278,16 +275,27 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             margin-bottom: 15px;
         }
 
-        .vertical-center {
+        .vertical-center1 {
 
             position: absolute;
             top: 50%;
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            margin-left: 22%;
-            margin-right: 22%;
+            margin-left: 25%;
+            margin-right: 25%;
         }
 
+        .vertical-center2 {
+
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+
+   
 
 
 
@@ -298,7 +306,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             }
 
         }
-
     </style>
 </head>
 
@@ -414,48 +421,48 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction1()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio2.jpg" class="card-img-top image1" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Diseño de ingeniería</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center1">Diseño de ingeniería</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 text-left">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction2()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio3.jpg" class="card-img-top image2" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Suministro de material eléctrico</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center1">Suministro de material eléctrico</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction3()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio4.jpg" class="card-img-top image3" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Código de red</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center2">Código de red</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction4()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio5.jpg" class="card-img-top image4" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Sistema fotovoltaicos</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center2">Sistema fotovoltaicos</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction5()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio7.jpg" class="card-img-top image5" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Mantenimiento eléctrico</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center1">Mantenimiento eléctrico</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction6()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio1.jpg" class="card-img-top image9" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Trámites con compañías suministradoras</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center1">Trámites con compañías suministradoras</h4>
                     </div>
                 </div>
             </div>
@@ -464,24 +471,24 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction7()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio10.png" class="card-img-top image7" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Estudios eléctricos</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text  vertical-center2">Estudios eléctricos</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction8()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio9.jpg" class="card-img-top image8" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center">Diagnóstico y pruebas eléctricas</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center1">Diagnóstico y pruebas eléctricas</h4>
                     </div>
                 </div>
             </div>
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
                 <div class="card contain animated bounceInLeft wow img-contenedor" onclick="myFunction9()" data-toggle="modal" data-target="#exampleModal">
                     <img src="img/servicio6.jpg" class="card-img-top image9" alt="">
-                    <div class="card-body overlay">
-                        <h4 class="card-title text vertical-center"> Construcción</h4>
+                    <div class="card-body overlay zero">
+                        <h4 class="card-title text vertical-center2"> Construcción</h4>
                     </div>
                 </div>
             </div>
