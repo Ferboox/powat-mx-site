@@ -164,7 +164,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
         }
 
         .img-contenedor img {
-
+            transition: all .9s ease;   
+            
             -webkit-transition: all .9s ease;
             /* Safari y Chrome */
             -moz-transition: all .9s ease;
