@@ -82,7 +82,9 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
     <!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
+    <!-- <link href="assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" /> -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
@@ -91,8 +93,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/demo/demo.css" rel="stylesheet" />
-
-
 
     <link href="css/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -165,7 +165,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
         .img-contenedor img {
             transition: all .9s ease;   
-            
+
             -webkit-transition: all .9s ease;
             /* Safari y Chrome */
             -moz-transition: all .9s ease;
@@ -279,9 +279,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent fixed-top zero" color-on-scroll="500">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="#pablo">
-                    <a class="navbar-brand " href=""> <img src="img/logo.png" class="img-fluid float-left" alt="" id="logo"></a>
-                </a>
+                <a class="navbar-brand " href="/"> <img src="assets/img/header/logo-powatt.webp" class="img-fluid float-left" alt="Powatt MX Logo" id="logo" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-navbar-primary" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar bar1"></span>
                     <span class="navbar-toggler-bar bar1"></span>
@@ -302,17 +300,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                             <p>Servicios</p>
                         </a>
                     </li>
-                    <!--
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.php">
-                            <p>Galeria</p>
-                        </a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#clientes" id="script4">
-                            <p>Clientes</p>
-                        </a>
-                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto" id="script5">
                             <p>Contacto</p>
