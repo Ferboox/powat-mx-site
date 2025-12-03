@@ -1,0 +1,128 @@
+@use './mixins/screen.scss' as bp;
+
+@font-face {
+    font-family: 'Aileron'; /*a name to be used later*/
+    src: url("/fonts/Aileron-Regular.otf"); /*URL to font*/
+}
+
+.bg-blue{
+    background: #10284a;
+}
+
+.navbar-social{
+    @include bp.media-screen(mobile) {
+        display: none;
+    }
+
+    a{
+        text-decoration: none;
+        margin: 0px 2px;
+
+        img{
+            width: 28px;
+            height: auto;
+        }
+    }
+}
+
+.social-icons-mobile{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    
+    @include bp.media-screen(desktop) {
+        display: none !important;
+    }
+
+    span{
+        color: #ffffff;
+    }
+
+    a{
+        text-decoration: none;
+        margin: 0px 2px;
+
+        img{
+            width: 28px;
+            height: auto;
+        }
+    }
+}
+
+.nav-link{
+    font-size: 0.9rem !important;
+    font-family: 'Aileron';
+}
+
+.section-image {
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+}
+
+.section-image .title,
+.section-image .card-plain .card-title {
+  color: #FFFFFF;
+}
+
+.section-image .nav-pills .nav-link {
+  background-color: #FFFFFF;
+}
+
+.section-image .nav-pills .nav-link:hover,
+.section-image .nav-pills .nav-link:focus {
+  background-color: #FFFFFF;
+}
+
+.section-image .info-title,
+.section-image .info.info-horizontal .icon i,
+.section-image .card-pricing.card-plain ul li {
+  color: #FFFFFF;
+}
+
+.section-image .description,
+.section-image .info .icon:not(.icon-circle) {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section-image .card:not(.card-plain) .info-title {
+  color: #2c2c2c;
+}
+
+.section-image .card:not(.card-plain) .info p,
+.section-image .card:not(.card-plain) .info .icon,
+.section-image .card:not(.card-plain) .description {
+  color: #9A9A9A;
+}
+
+.section-image .footer {
+  color: #FFFFFF;
+}
+
+.section-image .card-plain [class*="text-"],
+.section-image .card-plain ul li b {
+  color: #FFFFFF;
+}
+
+.section-image .card-plain .category {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.section-image:after {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  left: 0;
+  top: 0;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.section-image .container {
+  z-index: 2;
+  position: relative;
+}
