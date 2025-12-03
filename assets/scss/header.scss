@@ -25,6 +25,19 @@
     }
 }
 
+.navbar-brand{
+  @include bq.media-screen(mobile){
+    margin: 0 14px;
+  }
+
+  img{
+    @include bq.media-screen(mobile){
+      margin: 0 14px;
+      width: 118px;
+    }
+  }
+}
+
 .social-icons-mobile{
     position: absolute;
     bottom: 20px;
