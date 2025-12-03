@@ -82,7 +82,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
     <!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/header.css" rel="stylesheet" />
 
     <!-- <link href="assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" /> -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css">
@@ -102,6 +101,9 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     <script>
         new WOW().init();
     </script>
+
+        <link rel="stylesheet" href="/assets/css/header.css?v=0.0.1">
+
     <title>Powatt</title>
     <style>
         .zero {
@@ -288,9 +290,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse show" id="example-navbar-primary" data-nav-image="assets/img//blurred-image-1.jpg">
-                <ul class="navbar-nav ml-auto" id="ceva">
-
+            <div class="collapse navbar-collapse show justify-content-center" id="example-navbar-primary" data-nav-image="assets/img//blurred-image-1.jpg">
+                <ul class="navbar-nav" id="ceva">
                     <li class="nav-item ">
                         <a class="nav-link" href="#nosotros" id="script1">
                             <p>Nosotros</p>
@@ -304,10 +305,28 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto" id="script5">
+                            <p>Clientes</p>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#contacto" id="script5">
                             <p>Contacto</p>
                         </a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#contacto" id="script5">
+                            <p>Blog</p>
+                        </a>
+                    </li>
                 </ul>
+            </div>
+            <div class="navbar-social">
+                <a href=""><img src="assets/img/header/i-facebook.webp" alt="Facebook | Powatt MX" srcset=""></a>
+                <a href=""><img src="assets/img/header/i-instagram.webp" alt="Instagram | Powatt MX" srcset=""></a>
+                <a href=""><img src="assets/img/header/i-whatsapp.webp" alt="Whatsapp | Powatt MX" srcset=""></a>
+                <a href=""><img src="assets/img/header/i-youtube.webp" alt="Youtube | Powatt MX" srcset=""></a>
+                <a href=""><img src="assets/img/header/i-tiktok.webp" alt="TikTok | Powatt MX" srcset=""></a>
+                <a href=""><img src="assets/img/header/i-linkedin.webp" alt="LinkedIn | Powatt MX" srcset=""></a>
             </div>
         </div>
     </nav>
@@ -764,38 +783,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
     <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
     <script src="assets/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
-    <script>
-        $('#script1').on('click', function(e) {
-            e.preventDefault();
-            $("html, body").animate({
-                scrollTop: $('#nosotros').offset().top
-            }, 1000);
-        });
-        $('#script2').on('click', function(e) {
-            e.preventDefault();
-            $("html, body").animate({
-                scrollTop: $('#servicios').offset().top
-            }, 1000);
-        });
-        $('#script3').on('click', function(e) {
-            e.preventDefault();
-            $("html, body").animate({
-                scrollTop: $('#galeria').offset().top
-            }, 1000);
-        });
-        $('#script4').on('click', function(e) {
-            e.preventDefault();
-            $("html, body").animate({
-                scrollTop: $('#clientes').offset().top
-            }, 1000);
-        });
-        $('#script5').on('click', function(e) {
-            e.preventDefault();
-            $("html, body").animate({
-                scrollTop: $('#contacto').offset().top
-            }, 1000);
-        });
-    </script>
 
     <script>
         function myFunction6() {
@@ -893,6 +880,19 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             document.getElementById("titulo").innerHTML = titulo_data;
             document.getElementById("lista").innerHTML = lista_data;
         }
+    </script>
+
+    <!-- Smooth Scroll on Header -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 
