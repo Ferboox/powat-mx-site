@@ -82,6 +82,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
     <!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/header.css" rel="stylesheet" />
+
     <!-- <link href="assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" /> -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css">
 
@@ -276,7 +278,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
 <body>
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg bg-white fixed-top navbar-transparent fixed-top zero" color-on-scroll="500">
+    <nav class="navbar navbar-expand-lg bg-blue fixed-top navbar-transparent fixed-top zero" color-on-scroll="500">
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand " href="/"> <img src="assets/img/header/logo-powatt.webp" class="img-fluid float-left" alt="Powatt MX Logo" id="logo" /></a>
