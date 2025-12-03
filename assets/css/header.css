@@ -6,11 +6,38 @@
   background: #10284a;
 }
 
+@media (max-width: 768px) {
+  .navbar-social {
+    display: none;
+  }
+}
 .navbar-social a {
   text-decoration: none;
   margin: 0px 2px;
 }
 .navbar-social a img {
+  width: 28px;
+  height: auto;
+}
+
+.social-icons-mobile {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+@media (min-width: 1200px) {
+  .social-icons-mobile {
+    display: none !important;
+  }
+}
+.social-icons-mobile span {
+  color: #ffffff;
+}
+.social-icons-mobile a {
+  text-decoration: none;
+  margin: 0px 2px;
+}
+.social-icons-mobile a img {
   width: 28px;
   height: auto;
 }

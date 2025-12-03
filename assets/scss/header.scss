@@ -1,3 +1,5 @@
+@use './mixins/screen.scss' as bp;
+
 @font-face {
     font-family: 'Aileron'; /*a name to be used later*/
     src: url("/fonts/Aileron-Regular.otf"); /*URL to font*/
@@ -8,6 +10,34 @@
 }
 
 .navbar-social{
+    @include bp.media-screen(mobile) {
+        display: none;
+    }
+
+    a{
+        text-decoration: none;
+        margin: 0px 2px;
+
+        img{
+            width: 28px;
+            height: auto;
+        }
+    }
+}
+
+.social-icons-mobile{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    
+    @include bp.media-screen(desktop) {
+        display: none !important;
+    }
+
+    span{
+        color: #ffffff;
+    }
+
     a{
         text-decoration: none;
         margin: 0px 2px;

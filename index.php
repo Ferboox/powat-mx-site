@@ -83,8 +83,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     <!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- <link href="assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" /> -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css">
+    <link href="assets/css/now-ui-kit.min.css" rel="stylesheet" />
+     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/now-ui-kit@1.3.0/assets/css/now-ui-kit.min.css"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -291,7 +291,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 </button>
             </div>
             <div class="collapse navbar-collapse show justify-content-center" id="example-navbar-primary" data-nav-image="assets/img//blurred-image-1.jpg">
-                <ul class="navbar-nav" id="ceva">
+                <ul class="navbar-nav">
                     <li class="nav-item ">
                         <a class="nav-link" href="#nosotros" id="script1">
                             <p>Nosotros</p>
@@ -319,6 +319,16 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                         </a>
                     </li>
                 </ul>
+                <p class="social-icons-mobile">
+                    <span>Siguenos en</span>
+                    <br>
+                    <a href=""><img src="assets/img/header/i-facebook.webp" alt="Facebook | Powatt MX" srcset=""></a>
+                    <a href=""><img src="assets/img/header/i-instagram.webp" alt="Instagram | Powatt MX" srcset=""></a>
+                    <a href=""><img src="assets/img/header/i-whatsapp.webp" alt="Whatsapp | Powatt MX" srcset=""></a>
+                    <a href=""><img src="assets/img/header/i-youtube.webp" alt="Youtube | Powatt MX" srcset=""></a>
+                    <a href=""><img src="assets/img/header/i-tiktok.webp" alt="TikTok | Powatt MX" srcset=""></a>
+                    <a href=""><img src="assets/img/header/i-linkedin.webp" alt="LinkedIn | Powatt MX" srcset=""></a>
+                </p>
             </div>
             <div class="navbar-social">
                 <a href=""><img src="assets/img/header/i-facebook.webp" alt="Facebook | Powatt MX" srcset=""></a>
