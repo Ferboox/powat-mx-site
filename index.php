@@ -102,7 +102,8 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
         new WOW().init();
     </script>
 
-        <link rel="stylesheet" href="/assets/css/header.css?v=0.0.1">
+    <link rel="stylesheet" href="/assets/css/header.css?v=0.0.1">
+    <link rel="stylesheet" href="/assets/css/homepage.css?v=0.0.2">
 
     <title>Powatt</title>
     <style>
@@ -217,14 +218,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             transition: .5s ease;
         }
 
-
-        .slogan {
-            color: white;
-            font-weight: bold !important;
-            margin-top: -400px;
-            text-align: center;
-        }
-
         .row {
             margin-bottom: 20px;
         }
@@ -267,13 +260,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
         .img {
             margin-bottom: 15px;
-        }
-
-        @media screen and (max-width: 800px) {
-            .slogan {
-                display: none !important;
-            }
-
         }
     </style>
 </head>
@@ -342,15 +328,13 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     </nav>
     <!--Cabecera-->
 
-    <div class="container-fluid zero contenedor ">
-        <div class="row zero">
+    <div class="container-fluid zero" id="main-banner">
+        <div class="row zero position-relative h-md-100">
             <div class="col-12 zero">
-
-                <img src="img/img1.jpg" class="img-responsive img-fluid animated fadeIn" alt="">
+                <img src="assets/img/homepage/main-image-desktop-simple.jpg" class="img-responsive img-fluid animated fadeIn" alt="Torres eléctricas">
             </div>
-            <div class="col-12 slogan">
-                <h2 class="s">“La energía no se crea ni se destruye, Powatt la transforma”</h2>
-                <a type="submit" class="btn btn-warning btn-round  cotiza" href="#contacto">Cotiza</a>
+            <div class="slogan">
+                <h2><i>¡La Energía <br> Nos Mueve!</i></h2>
             </div>
         </div>
     </div>
