@@ -26,12 +26,12 @@
 }
 
 .navbar-brand{
-  @include bq.media-screen(mobile){
+  @include bp.media-screen(mobile){
     margin: 0 14px;
   }
 
   img{
-    @include bq.media-screen(mobile){
+    @include bp.media-screen(mobile){
       margin: 0 14px;
       width: 118px;
     }
