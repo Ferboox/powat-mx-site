@@ -250,14 +250,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             margin-right: 10px auto !important;
         }
 
-        .navbar-toggler-bar {
-            background-color: black !important;
-        }
-
-        .navbar-toggler {
-            padding-right: 50px;
-        }
-
         .img {
             margin-bottom: 15px;
         }

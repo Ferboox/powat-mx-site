@@ -59,6 +59,25 @@
   font-family: "Aileron";
 }
 
+@media (max-width: 768px) {
+  .navbar-toggler {
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px !important;
+    padding: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-toggler-bar {
+    width: 28px !important;
+    height: 3px !important;
+    background-color: #ffffff !important;
+  }
+}
+
 .section-image {
   background-size: cover;
   background-position: center center;
