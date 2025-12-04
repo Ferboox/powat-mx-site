@@ -20,6 +20,18 @@
   height: auto;
 }
 
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin: 0 14px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-brand img {
+    margin: 0 14px;
+    width: 118px;
+  }
+}
+
 .social-icons-mobile {
   position: absolute;
   bottom: 20px;
