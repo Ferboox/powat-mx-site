@@ -58,7 +58,7 @@
 
 #nosotros{
     font-family: 'Aileron';
-    padding: 28px 0;
+    padding: 28px 14px;
     margin: 0;
     height: auto;
 
@@ -118,7 +118,7 @@
             max-width: 480px;
 
             @include bp.media-screen(mobile){
-                max-width: 90%;
+                max-width: 100%;
             }   
         }
     }
