@@ -112,12 +112,6 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             margin: 0% !important;
         }
 
-        .card-azul {
-            background-color: #4a5a65;
-            padding: 10%;
-
-        }
-
         .card-azul2 {
             background-color: #8593AF;
             padding: 10%;
@@ -331,23 +325,29 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
         </div>
     </div>
 
-    <!--nosotros-->
-    <div class="container-fluid  card-azul">
-        <div class="row" id="nosotros">
-
-            <div class="col-md-8 ml-auto mr-auto text-center">
-
-                <h2 class="title white">¿Quiénes somos?</h2>
-                <h5 class="description white animated slideInUp wow">Somos una empresa especializada en brindar servicios y soluciones eléctricas en todos los sectores.</h5>
-
-            </div>
+    <!--Nosotros-->
+    <div class="container-fluid bg-yellow position-relative" id="nosotros">
+        <div class="text-center text">
+            <h2 class="title white">¿Quiénes Somos?</h2>
+            <p class="animated slideInUp wow">
+                <span style="color: #0e1648;font-weight: 600">Con 5 años de experiencia</span>
+                <br>
+                <span style="font-weight: 400; color: #ffffff">
+                    Somos una empresa especializada en brindar <br> servicios y soluciones electromecánicas a <br> 
+                    nivel <span style="color:#0e1648; font-weight: 600;">local</span> como <span style="color: #0e1648; font-weight: 600;">nacional</span> para los sectores <br>
+                    de la industria y comercio
+                </span>
+            </p>
+            <a href="#">Más sobre nosotros</a>
         </div>
-
+        <div class="justify-content-between d-flex images w-100">
+            <img class="thunder" src="/assets/img/homepage/mapa-mexico.webp" alt="">
+            <img src="/assets/img/homepage/mapa-mexico.webp" alt="">
+        </div>
     </div>
 
     <!--Presencia-->
-
-    <div class="container-fluid card-azul2">
+    <!-- <div class="container-fluid card-azul2">
         <div class="row">
             <div class="col ml-auto mr-auto text-center">
                 <h2 class="title white">Presencia</h2>
@@ -364,10 +364,10 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 <h5 class="description animated slideInUp wow white">Nuestra presencia cubre todo el territorio nacional.</h5>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--Servicios-->
-    <div class="container">
+    <!-- <div class="container">
 
         <div class="row " id="servicios">
             <div class="col-12 columna text-center pt-5 mt-5">
@@ -489,10 +489,10 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
           
         </div>
 
-    </div>
+    </div> -->
     <!--Modal servicios-->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -510,98 +510,10 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
 
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <!--Galeria
-    <div class="container" id="galeria">
-        <div class="row ">
-            <div class="col-12 columna text-center">
-                <h2>
-                    <b> Galería</b>
-                </h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class=" img col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                <img src="img/galeria1.jpg" class="img-responsive img-fluid" alt="">
-            </div>
-            <div class=" img col-6 col-sm-6 com-md-6 col-lg-3 col-xl-3">
-                <img src="img/galeria2.jpg" class="img-responsive img-fluid" alt="">
-            </div>
-            <div class=" img col-6 col-sm-6 com-md-6 col-lg-3 col-xl-3">
-                <img src="img/galeria3.jpg" class="img-responsive img-fluid" alt="">
-            </div>
-            <div class=" img col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                <a href="gallery.php">
-                    <img src="img/galeria14.jpg" class="img-responsive  more img-fluid" alt="">
-                    <div class="plus">
-                        <i class="fas fa-plus fa-4x"></i>
-                    </div>
-                    <div class="mas">
-                        Galería completa
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </div>
-    Clientes
-    <div class="container">
-        <div class="row " id="clientes">
-            <div class="col-12 columna text-center">
-                <h2>
-                    <b> CLIENTES</b>
-                </h2>
-            </div>
-        </div>
-
-        <div class="row ">
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 cliente">
-                <img src="img/logo.png" class="img-responsive img-fluid animated pulse wow" alt="">
-            </div>
-        </div>
-
-
-    </div>-->
     <!--Contactanos-->
-    <div class="contactus-1 section-image" id="contacto" style="background-image: url('img/img8.jpg')">
+    <!-- <div class="contactus-1 section-image" id="contacto" style="background-image: url('img/img8.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
@@ -705,7 +617,7 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
                 <i class="fab fa-whatsapp fa-2x" style="color:white;"></i></a>
 
         </div>
-    </div>
+    </div> -->
     <!--pie-->
     <footer class="footer" data-background-color="black">
         <div class=" container ">
