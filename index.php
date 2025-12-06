@@ -367,16 +367,12 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
     </div> -->
 
     <!--Servicios-->
-    <!-- <div class="container">
-
-        <div class="row " id="servicios">
-            <div class="col-12 columna text-center pt-5 mt-5">
-                <h2>
-                    <b>NUESTROS SERVICIOS</b>
-                </h2>
-            </div>
+    <div id="servicios" class="services">
+        <div class="text-center bg-lightning w-100 position-relative">
+            <h2>Servicios</h2>
+            <img src="/assets/img/homepage/services.webp" alt="">
         </div>
-        <div class="row">
+        <div class="row services__options">
             <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5 ">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction1()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
@@ -489,9 +485,9 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
           
         </div>
 
-    </div> -->
+    </div>
+    
     <!--Modal servicios-->
-
     <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

@@ -116,3 +116,19 @@
     max-width: 100%;
   }
 }
+
+.services .bg-lightning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services .bg-lightning h2 {
+  font-size: 42px;
+  color: #ffffff;
+  position: absolute;
+  margin: 0;
+  font-weight: 700;
+}
+.services__options {
+  max-width: 1140px;
+}
