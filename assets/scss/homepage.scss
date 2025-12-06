@@ -129,6 +129,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include bp.media-screen(mobile){
+            height: 70px;
+        }
         
         h2{
             font-size: 42px;
@@ -136,6 +140,17 @@
             position: absolute;
             margin: 0;
             font-weight: 700;
+
+            @include bp.media-screen(mobile){
+                font-size: 32px;
+            }
+        }
+
+        img{
+            @include bp.media-screen(mobile){
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 
