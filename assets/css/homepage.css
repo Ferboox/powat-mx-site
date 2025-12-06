@@ -131,4 +131,14 @@
 }
 .services__options {
   max-width: 1140px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 14px auto;
+  justify-content: center;
+}
+.services__options div > p {
+  font-size: 16px;
+  margin: 4px 0;
+  font-family: "Aileron Light";
+  font-weight: 400;
 }

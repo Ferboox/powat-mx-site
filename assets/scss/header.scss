@@ -5,6 +5,11 @@
     src: url("/fonts/Aileron-Regular.otf"); /*URL to font*/
 }
 
+@font-face {
+    font-family: 'Aileron Light'; /*a name to be used later*/
+    src: url("/fonts/Aileron-Light.otf"); /*URL to font*/
+}
+
 .bg-blue{
     background: #10284a;
 }

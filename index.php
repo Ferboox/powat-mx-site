@@ -372,112 +372,160 @@ if (isset($_POST['txtNombre']) && isset($_POST['txtApellido']) && isset($_POST['
             <h2>Servicios</h2>
             <img src="/assets/img/homepage/services.webp" alt="">
         </div>
-        <div class="row services__options">
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-5 ">
+        <div class="services__options">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl- ">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction1()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio2.jpg" class="card-img-top " alt="">
+                        <img src="/assets/img/homepage/DISEÑO DE INGENIERÍA Y DETALLE.jpg" class="card-img-top " alt="">
                     </div>
                 </div>
                 <div class="row contain animated bounceInLeft wow">
-                    <div class="col">
-                        <h5 class="card-title text zero ">Diseño de ingeniería</h5>
+                    <div class="col ">
+                        <p>- Asesoría en proyecto</p>
+                        <p>- Diseño de proyecto de baja, media y alta tensión para áreas industriales y comerciales.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction2()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio3.jpg" class="card-img-top " alt="">
+                        <img src="/assets/img/homepage/codigo_de_red.jpg" class="card-img-top " alt="">
                     </div>
                 </div>
                 <div class="row contain animated bounceInLeft wow">
-                    <div class="col">
-                        <h5 class="card-title text zero ">Suministro de material eléctrico</h5>
+                    <div class="col ">
+                        <p>- Asesoría y ejecución de normativa.</p>
+                        <p>-Trámites como usuario calificado.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction3()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio4.jpg" class="card-img-top zero" alt="">
+                        <img src="/assets/img/homepage/PAILERÍA Y SOLDADURA.jpg" class="card-img-top zero" alt="">
                     </div>
                 </div>
                 <div class="row contain animated bounceInLeft wow">
-                    <div class="col">
-                        <h5 class="card-title text zero ">Código de red</h5>
+                    <div class="col ">
+                        <p>- Diseño mecánico.</p>
+                        <p>- Elaboración de proyecto.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction4()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio5.jpg" class="card-img-top zero" alt="">
+                        <img src="/assets/img/homepage/INSTALACIÓN Y DISEÑO DE SISTEMAS FOTOVOLTAICOS.jpg" class="card-img-top zero" alt="">
                     </div>
                 </div>
-                <div class="row contain animated bounceInLeft wow">
-                    <div class="col">
-                        <h5 class="card-title text zero ">Sistema fotovoltaicos</h5>
+                 <div class="row contain animated bounceInLeft wow">
+                    <div class="col ">
+                        <p>- Ahorro de energía por medio de paneles solares.</p>
+                        <p>- Estudio por medio de software especializados.</p>
+                        <p>- Instalaciones y suministro de materiales.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction5()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio7.jpg" class="card-img-top zero" alt="">
+                        <img src="/assets/img/homepage/construccion.jpg" class="card-img-top zero" alt="">
                     </div>
                 </div>
                 <div class="row contain animated bounceInLeft wow">
-                    <div class="col">
-                        <h5 class="card-title text zero ">Mantenimiento eléctrico</h5>
+                    <div class="col ">
+                        <p>- Montaje electromecánico.</p>
+                        <p>- Subestaciones eléctricas.</p>
+                        <p>- Instalaciones eléctricas en baja y media tensión.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction6()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio1.jpg" class="card-img-top zero" alt="">
+                        <img src="/assets/img/homepage/MANTENIMIENTO ELÉCTRICO.jpg" class="card-img-top zero" alt="">
                     </div>
                 </div>
                 <div class="row contain animated bounceInLeft wow">
                     <div class="col ">
-                        <h5 class="card-title text zero ">Trámites con compañías suministradoras</h5>
+                        <p>- Subestaciones.</p>
+                        <p>- Transformadores.</p>
+                        <p>- Sistemas fotovoltaicos</p>
+                        <p>- Tableros</p>
+                        <p>- Capacitores</p>
+                        <p>- Equipo eléctrico.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction7()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio10.png" class="card-img-top zero" alt="">
+                        <img src="/assets/img/homepage/DIAGNÓSTICO Y PRUEBAS ELÉCTRICAS.jpg" class="card-img-top zero" alt="">
                     </div>
                 </div>
-                <div class="row contain animated bounceInLeft wow">
-                    <div class="col">
-                        <h5 class="card-title text zero ">Estudios eléctricos</h5>
+                 <div class="row contain animated bounceInLeft wow">
+                    <div class="col ">
+                        <p>- Relación de transformación a transformador.</p>
+                        <p>- Resistencia de aislamiento y óhmica de devanados.</p>
+                        <p>- Resistencia pruebas de aceite aislante.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction8()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col ">
-                        <img src="img/servicio9.jpg" class="card-img-top zero" alt="">
+                        <img src="/assets/img/homepage/ESTUDIOS ELÉCTRICOS.jpg" class="card-img-top zero" alt="">
                     </div>
                 </div>
-                <div class="row contain animated bounceInLeft wow">
+               <div class="row contain animated bounceInLeft wow">
                     <div class="col ">
-                        <h5 class="card-title text zero ">Diagnóstico y pruebas eléctricas</h5>
+                        <p>- Cortocircuito.</p>
+                        <p>- Coordinación de protecciones.</p>
+                        <p>- Arc flash.</p>
+                        <p>- Sistema de tierras.</p>
+                        <p>- Blindaje de acuerdo a NMX-J-549-ANCE-2005.</p>
+                        <p>- Flujos de potencia</p>
+                        <p>- Áreas clasificadas de acuerdo a NOM-001-SEDE-2012.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-12 columna col-sm-12 col-md-4 col-lg-4 col-xl-4  mb-5">
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction9()" data-toggle="modal" data-target="#exampleModal">
                     <div class="col">
-                        <img src="img/servicio6.jpg" class="card-img-top zero" alt="">
+                        <img src="/assets/img/homepage/HVACR.jpg" class="card-img-top zero" alt="">
                     </div>
                 </div>
                 <div class="row contain animated bounceInLeft wow">
                     <div class="col ">
-                        <h5 class="card-title text zero ">Construcción</h5>
+                        <p>- Instalación.</p>
+                        <p>- Mantenimiento correctivo y preventivo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction9()" data-toggle="modal" data-target="#exampleModal">
+                    <div class="col">
+                        <img src="/assets/img/homepage/MANTENIMIENTO INDUSTRIAL.jpg" class="card-img-top zero" alt="">
+                    </div>
+                </div>
+                <div class="row contain animated bounceInLeft wow">
+                    <div class="col ">
+                        <p>- Mantenimiento preventivo y correctivo a cualquier equipo mecánico.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 columna col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="row contain animated bounceInLeft wow img-contenedor" onclick="myFunction9()" data-toggle="modal" data-target="#exampleModal">
+                    <div class="col">
+                        <img src="/assets/img/homepage/SERVICIOS ESPECIALIZADOS.jpg" class="card-img-top zero" alt="">
+                    </div>
+                </div>
+                <div class="row contain animated bounceInLeft wow">
+                    <div class="col ">
+                        <p>- Estudio de Corto Circuito.</p>
+                        <p>- Estudio de Arco Eléctrico</p>
+                        <p>- Estudio de Coordinación de Protecciones.</p>
+                        <p>- Norma Oficial Mexicana NOM-022-STPS-2015</p>
                     </div>
                 </div>
             </div>
